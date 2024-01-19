@@ -1,0 +1,23 @@
+# Query para hacer consultas
+type Query {
+    findStudentById(studentId: String) : Student
+    findAllStudents : [Student]
+}
+
+type Mutation {
+    createStudent(inputStudent: InputStudent) : Student
+}
+
+type Student {
+    id: ID,
+    firstName: String,
+    lastName: String,
+    dateBirth: String
+}
+
+input InputStudent {
+    firstName: String,
+    lastName: String,
+    dateBirth: String,
+    courseId: String!
+}
