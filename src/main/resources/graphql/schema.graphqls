@@ -1,18 +1,30 @@
 # Query para hacer consultas
 type Query {
+    # Estudiantes
     findStudentById(studentId: String) : Student
     findAllStudents : [Student]
+
+    # Cursos
+    findCourseById(courseId: String) : Course
+    findAllCourses : [Course]
 }
 
 type Mutation {
-    createStudent(inputStudent: InputStudent) : Student
+    # Estudiantes
+    createStudent(inputStudent: InputStudent!) : Student
+    deleteStudentById(studentId: String) : String
+
+    # Cursos
+    createCourse(inputCourse: InputCourse!) : Course
+    deleteCourseById(courseId: String) : String
 }
 
 type Student {
     id: ID,
     firstName: String,
     lastName: String,
-    dateBirth: String
+    dateBirth: String,
+    course: Course
 }
 
 input InputStudent {
@@ -20,4 +32,14 @@ input InputStudent {
     lastName: String,
     dateBirth: String,
     courseId: String!
+}
+
+type Course {
+    name: String,
+    category: String
+}
+
+input InputCourse {
+    name: String,
+    category: String
 }

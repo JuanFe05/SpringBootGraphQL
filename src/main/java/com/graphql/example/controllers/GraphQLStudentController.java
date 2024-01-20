@@ -45,7 +45,7 @@ public class GraphQLStudentController {;
         student.setFirstName(inputStudent.getFirstName());
         student.setLastName(inputStudent.getLastName());
 
-        // Parse the date string into a Date object
+        // Parsear de cadena de texto a un objeto de Fecha
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         ParsePosition position = new ParsePosition(0);
         Date date = dateFormat.parse(inputStudent.getDateBirth(), position);
@@ -57,6 +57,13 @@ public class GraphQLStudentController {;
         studentService.createStudent(student);
 
         return student;
+    }
+
+    @MutationMapping(name = "deleteStudentById")
+    public String deleteById(@Argument(name = "studentId") String id) {
+        studentService.deleteById(Long.parseLong(id));
+
+        return "Estudiante con " + id + " ha sido eliminado";
     }
 
 }
