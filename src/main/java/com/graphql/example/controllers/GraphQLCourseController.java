@@ -37,6 +37,18 @@ public class GraphQLCourseController {
         return course;
     }
 
+    @MutationMapping(name = "updateCourse")
+    public Course updateCourse(@Argument String id, @Argument InputCourse inputCourse) {
+        Course course = new Course();
+
+        course.setId(Long.parseLong(id));
+        course.setName(inputCourse.getName());
+        course.setCategory(inputCourse.getCategory());
+
+        courseService.createCourse(course);
+        return course;
+    }
+
     @MutationMapping(name = "deleteCourseById")
     public String deleteById(@Argument(name = "courseId") String id) {
         courseService.deleteById(Long.parseLong(id));
