@@ -29,6 +29,10 @@ Las queries en SpringBootGraphQL te permiten realizar consultas para obtener dat
 
 Las mutations te permiten realizar cambios en los datos, como agregar, actualizar o eliminar registros:
 
+<div style="height: 300px; width: 300px;">
+    ![mutation_createCourse](https://github.com/JuanFe05/SpringBootGraphQL/assets/40324908/07c1dc86-362d-4492-86d4-1b4accf92fcf)
+</div>
+
 ![mutation_createCourse](https://github.com/JuanFe05/SpringBootGraphQL/assets/40324908/07c1dc86-362d-4492-86d4-1b4accf92fcf)
 
 ![mutation_deleteCourse](https://github.com/JuanFe05/SpringBootGraphQL/assets/40324908/0754c002-130c-4f9d-88d1-06141d39131d)
